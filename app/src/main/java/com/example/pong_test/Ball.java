@@ -17,10 +17,6 @@ public class Ball {
         mBallWidth = screenX / 100;
         mBallHeight = mBallWidth;
 
-    /*
-        Start the ball travelling straight up
-        at a quarter of the screen height per second
-    */
         mYVelocity = screenY / 4;
         mXVelocity = mYVelocity;
 
@@ -55,7 +51,6 @@ public class Ball {
         // Generate a random number either 0 or 1
         Random generator = new Random();
         int answer = generator.nextInt(2);
-
         if(answer == 0){
             reverseXVelocity();
         }

@@ -78,6 +78,7 @@ public class Bat {
                     (mRect.right - mRect.left);
         }
 
+
         // Update the Bat graphics
         mRect.left = mXCoord;
         mRect.right = mXCoord + mLength;

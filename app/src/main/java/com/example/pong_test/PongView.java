@@ -191,7 +191,7 @@ class PongView extends SurfaceView implements Runnable {
             sp.play(beep1ID, 1, 1, 0, 0, 1);
         }
         // Bounce the mBall back when it hits the bottom of screen
-        if(mBall.getRect().bottom > mScreenY){
+        if(mBall.getRect().bottom >= mScreenY){
             mBall.reverseYVelocity();
             mBall.clearObstacleY(mScreenY - 2);
 
@@ -205,7 +205,7 @@ class PongView extends SurfaceView implements Runnable {
             }
         }
         // Bounce the mBall back when it hits the top of screen
-        if(mBall.getRect().top < 0){
+        if(mBall.getRect().top <= 1){
             mBall.reverseYVelocity();
             mBall.clearObstacleY(12);
 
@@ -213,19 +213,22 @@ class PongView extends SurfaceView implements Runnable {
         }
 
         // If the mBall hits left wall bounce
-        if(mBall.getRect().left < 0){
+        if(mBall.getRect().left <= 0){
             mBall.reverseXVelocity();
             mBall.clearObstacleX(2);
 
             sp.play(beep3ID, 1, 1, 0, 0, 1);
         }
         // If the mBall hits right wall bounce
-        if(mBall.getRect().right > mScreenX){
+        if(mBall.getRect().right >= mScreenX){
             mBall.reverseXVelocity();
             mBall.clearObstacleX(mScreenX - 22);
 
             sp.play(beep3ID, 1, 1, 0, 0, 1);
         }
+
+
+
 
     }
 
