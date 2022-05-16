@@ -205,8 +205,9 @@ class PongView extends SurfaceView implements Runnable {
             }
         }
         // Bounce the mBall back when it hits the top of screen
-        if(mBall.getRect().top <= 1){
+        if(mBall.getRect().top < 1){
             mBall.reverseYVelocity();
+            mBall.reverseXVelocity();
             mBall.clearObstacleY(12);
 
             sp.play(beep2ID, 1, 1, 0, 0, 1);
